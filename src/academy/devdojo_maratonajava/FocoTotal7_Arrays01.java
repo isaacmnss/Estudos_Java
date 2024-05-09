@@ -10,6 +10,6 @@ public class FocoTotal7_Arrays01 {
        System.out.println(idades[1]);
        System.out.println(idades[2]);
 
-       //sexo
+       //teste
     }
 }
