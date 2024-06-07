@@ -1,4 +1,4 @@
-package academy.devdojo_maratonajava;
+package academy.devdojo_maratonajava.introdução;
 
 public class FocoTotal6_EstruturasDeRepetição04 {
     // Dado o valor de um carro, descubra em quantas vezes ele pode ser parcelado.

@@ -1,4 +1,4 @@
-package academy.devdojo_maratonajava;
+package academy.devdojo_maratonajava.introdução;
 
 public class Foco_total2_tiposPrimitivos {
     public static void main(String[] args) {

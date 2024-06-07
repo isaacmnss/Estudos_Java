@@ -1,4 +1,4 @@
-package academy.devdojo_maratonajava;
+package academy.devdojo_maratonajava.introdução;
 
 /*
     Prática

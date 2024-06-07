@@ -1,4 +1,4 @@
-package academy.devdojo_maratonajava;
+package academy.devdojo_maratonajava.introdução;
 
 public class FocoTotal5_EstruturasCondidionais03 {
     public static void main(String[] args) {

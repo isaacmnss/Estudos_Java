@@ -1,4 +1,4 @@
-package academy.devdojo_maratonajava;
+package academy.devdojo_maratonajava.introdução;
 
 public class FocoTotal8_ArraysMultidimensionais01 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package academy.devdojo_maratonajava;
+package academy.devdojo_maratonajava.introdução;
 
 public class FocoTotal6_EstruturasDeRepetição02 {
     public static void main(String[] args) {

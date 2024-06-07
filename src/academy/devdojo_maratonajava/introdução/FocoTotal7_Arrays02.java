@@ -1,6 +1,4 @@
-package academy.devdojo_maratonajava;
-
-import java.util.stream.Stream;
+package academy.devdojo_maratonajava.introdução;
 
 public class FocoTotal7_Arrays02 {
     public static void main(String[] args) {
