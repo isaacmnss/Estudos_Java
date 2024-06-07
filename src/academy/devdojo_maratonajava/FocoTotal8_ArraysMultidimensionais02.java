@@ -1,6 +1,6 @@
 package academy.devdojo_maratonajava;
 
-public class FocoTotal_ArraysMultidimensionais02 {
+public class FocoTotal8_ArraysMultidimensionais02 {
     public static void main(String[] args) {
         int[][] arrayInt = new int[3][];
         int[] array = {1, 2, 3};
