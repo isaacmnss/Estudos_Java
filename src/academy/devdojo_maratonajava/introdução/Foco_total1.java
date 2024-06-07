@@ -5,6 +5,6 @@ package academy.devdojo_maratonajava.introdução;
 
 public class Foco_total1 {
     public static void main(String[] args) {
-        System.out.println("sexo.");
+        System.out.println("olá.");
     }
 }
