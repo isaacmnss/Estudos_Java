@@ -12,8 +12,8 @@ public class CarroTest01 {
         carro1.nome = "Corolla";
         carro1.modelo = "LTZ";
         carro1.ano = 2020;
-        System.out.println(carro.nome + " " + carro.modelo + " " + carro.ano);
+        System.out.println("Carro 1: " + carro.nome + " " + carro.modelo + " " + carro.ano);
         System.out.println("\n####################");
-        System.out.println("\n"+carro1.nome + " " + carro1.modelo+ " " + carro1.ano);
+        System.out.println("\n"+ "Carro 2: "+carro1.nome + " " + carro1.modelo+ " " + carro1.ano);
     }
 }
