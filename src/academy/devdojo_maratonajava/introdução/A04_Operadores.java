@@ -1,6 +1,6 @@
 package academy.devdojo_maratonajava.introdução;
 
-public class Foco_total4_Operadores {
+public class A04_Operadores {
     public static void main(String[] args) {
         // + - / *
         int number01 = 10;

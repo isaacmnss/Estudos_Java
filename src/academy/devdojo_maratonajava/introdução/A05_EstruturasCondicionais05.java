@@ -1,6 +1,6 @@
 package academy.devdojo_maratonajava.introdução;
 
-public class FocoTotal5_EstruturasCondicionais05 {
+public class A05_EstruturasCondicionais05 {
     public static void main(String[] args) {
         byte dia = 1;
         switch (dia){

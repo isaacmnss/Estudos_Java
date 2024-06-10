@@ -9,7 +9,7 @@ package academy.devdojo_maratonajava.introdução;
     confirmo que recebi o salario de <salario>, na data de <data>.
  */
 
-public class Foco_total3_TiposPrimitivosExercício {
+public class A03_TiposPrimitivosExercício {
     public static void main(String[] args) {
         String name = "Isaac";
         String adress = "Rua Mariano Procópio, 37";

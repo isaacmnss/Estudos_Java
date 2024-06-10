@@ -1,6 +1,6 @@
 package academy.devdojo_maratonajava.introdução;
 
-public class FocoTotal7_Arrays01 {
+public class A07_Arrays01 {
     public static void main(String[] args) {
        int [] idades = new int[3];
        idades [0] = 21;

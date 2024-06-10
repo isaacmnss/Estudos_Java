@@ -1,6 +1,6 @@
 package academy.devdojo_maratonajava.introdução;
 
-public class FocoTotal7_Arrays02 {
+public class A07_Arrays02 {
     public static void main(String[] args) {
         // byte, short, int, long, double
         // char '\u0000 '''

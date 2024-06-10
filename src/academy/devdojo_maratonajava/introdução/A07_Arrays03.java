@@ -1,6 +1,6 @@
 package academy.devdojo_maratonajava.introdução;
 
-public class FocoTotal7_Arrays03 {
+public class A07_Arrays03 {
     public static void main(String[] args) {
         int [] numeros = new int[3];
         int [] numeros2 = {1, 2, 3, 4, 5};

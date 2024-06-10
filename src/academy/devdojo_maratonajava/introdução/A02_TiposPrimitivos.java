@@ -1,6 +1,6 @@
 package academy.devdojo_maratonajava.introdução;
 
-public class Foco_total2_tiposPrimitivos {
+public class A02_TiposPrimitivos {
     public static void main(String[] args) {
         // Tipos primitivos: int, double, float, char, byte, short, long, boolean
         int age = 21;
