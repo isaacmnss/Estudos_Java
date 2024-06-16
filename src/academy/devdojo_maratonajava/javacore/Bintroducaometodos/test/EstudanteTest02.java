@@ -3,11 +3,11 @@ package academy.devdojo_maratonajava.javacore.Bintroducaometodos.test;
 import academy.devdojo_maratonajava.javacore.Bintroducaometodos.domain.Estudante;
 import academy.devdojo_maratonajava.javacore.Bintroducaometodos.domain.ImpressoraEstudante;
 
-public class EstudanteTest01 {
+public class EstudanteTest02 {
     public static void main(String[] args) {
         Estudante estudante01 = new Estudante();
         Estudante estudante02 = new Estudante();
-        ImpressoraEstudante impressora = new ImpressoraEstudante();
+
 
         estudante01.nome = "Midoriya";
         estudante01.idade = 15;
@@ -17,12 +17,6 @@ public class EstudanteTest01 {
         estudante02.nome = "Sakura";
         estudante02.idade = 16;
         estudante02.sexo = 'F';
-
-        impressora.imprime(estudante01);
-        impressora.imprime(estudante02);
-        System.out.println("-----------");
-        impressora.imprime(estudante01);
-        impressora.imprime(estudante02);
-
     }
+
 }
