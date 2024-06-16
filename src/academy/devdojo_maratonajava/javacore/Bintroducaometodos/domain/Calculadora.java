@@ -1,4 +1,4 @@
-package academy.devdojo_maratonajava.javacore.Bintroduçãometodos.domain;
+package academy.devdojo_maratonajava.javacore.Bintroducaometodos.domain;
 
 public class Calculadora {
     public void somaDoisNumeros(){

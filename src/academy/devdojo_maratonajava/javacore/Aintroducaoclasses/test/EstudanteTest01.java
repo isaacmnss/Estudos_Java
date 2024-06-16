@@ -1,7 +1,7 @@
-package academy.devdojo_maratonajava.javacore.Aintroduçãoclasses.test;
+package academy.devdojo_maratonajava.javacore.Aintroducaoclasses.test;
 
 
-import academy.devdojo_maratonajava.javacore.Aintroduçãoclasses.domain.Estudante;
+import academy.devdojo_maratonajava.javacore.Aintroducaoclasses.domain.Estudante;
 // importando classe pública
 
 public class EstudanteTest01 {
