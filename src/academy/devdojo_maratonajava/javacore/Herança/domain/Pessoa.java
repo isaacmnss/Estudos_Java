@@ -1,9 +1,20 @@
 package academy.devdojo_maratonajava.javacore.Herança.domain;
 
+import java.security.PublicKey;
+
 public class Pessoa {
     protected String nome;
     protected String cpf;
     protected Endereço endereço;
+
+    public Pessoa(String nome){
+        this.nome = nome;
+    }
+
+    public Pessoa(String nome, String cpf) {
+        this(nome);
+        this.cpf = cpf;
+    }
 
     public void imprime(){
         System.out.println(this.nome);
@@ -34,4 +45,6 @@ public class Pessoa {
     public void setEndereço(Endereço endereço) {
         this.endereço = endereço;
     }
+
+
 }

@@ -3,6 +3,10 @@ package academy.devdojo_maratonajava.javacore.Herança.domain;
 public class Funcionario extends Pessoa {
     private double salario;
 
+   public  Funcionario(String nome){
+       super(nome);
+   }
+
     public double getSalario() {
         return salario;
     }
