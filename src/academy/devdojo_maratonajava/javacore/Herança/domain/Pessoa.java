@@ -1,13 +1,22 @@
 package academy.devdojo_maratonajava.javacore.Herança.domain;
 
-import java.security.PublicKey;
-
+// Todas as classes de Java Herdam da classe Object, pois todas as classes são objetos.
+// Isso faz com que a classe herde diversos métodos padrão da linguagem, mesmo que estes não tenham sido criados.
 public class Pessoa {
     protected String nome;
     protected String cpf;
     protected Endereço endereço;
-
+    static {
+        System.out.println("Dentro do bloco de inicialização estático de Pessoa.");
+    }
+    {
+        System.out.println("Dentro do bloco de inicialização de Pessoa 1");
+    }
+    {
+        System.out.println("Dentro do bloco de inicialização de Pessoa 2");
+    }
     public Pessoa(String nome){
+        System.out.println("Dentro do construtor de pessoa");
         this.nome = nome;
     }
 
