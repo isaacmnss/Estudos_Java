@@ -51,9 +51,10 @@ uma exceção, executar outro bloco
         }
 
 **É IMPORTANTE NUNCA DEIXAR O BLOCO CATCH EM BRANCO**
+
 *NÃO COLOCAR REGAS DE NEGÓCIO DENTRO DO CATCH*
 
-o printStackTrace apenas imprime o que ocorreu para que seja 
+o printStackTrace apenas imprime o que ocorreu para verificar o que causou a exceção
 
 ## Lidando com uma exceção unchecked
 
