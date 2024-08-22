@@ -1,11 +1,14 @@
 package academy.devdojo_maratonajava.javacore.Dconstrutores.domain;
 
+import java.util.Scanner;
+
 public class Anime {
-    private String nome;
-    private String tipo;
-    private int episodios;
-    private String genero;
-    private String estudio;
+    Scanner scanner = new Scanner(System.in);
+    private String nome = scanner.nextLine();
+    private String tipo = scanner.nextLine();
+    private int episodios = scanner.nextInt();
+    private String genero = scanner.nextLine();
+    private String estudio = scanner.nextLine();
 
     public Anime(String nome, String tipo, int episodios, String genero){
         this();
