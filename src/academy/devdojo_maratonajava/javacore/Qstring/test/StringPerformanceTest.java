@@ -1,4 +1,4 @@
-package academy.devdojo_maratonajava.Qstring.test;
+package academy.devdojo_maratonajava.javacore.Qstring.test;
 
 public class StringPerformanceTest {
     public static void main(String[] args) {
