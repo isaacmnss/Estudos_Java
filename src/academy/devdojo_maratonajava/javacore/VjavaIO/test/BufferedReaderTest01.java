@@ -14,7 +14,6 @@ public class BufferedReaderTest01 {
             while ((linha = br.readLine()) != null){
                 System.out.println(linha);// retorna null quando chega ao fim do arquivo
             }
-
         }catch (IOException e){
             e.printStackTrace();
         }
