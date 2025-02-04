@@ -60,6 +60,7 @@ o printStackTrace apenas imprime o que ocorreu para verificar o que causou a exc
 
 Também pode ser usado throw para lançar uma exceção quando prevista no código como no exemplo abaixo:
 
+```java
     public class RuntimeExceptionTest02 {
     public static void main(String[] args) {
        int resultado = divisao();
@@ -79,5 +80,6 @@ Também pode ser usado throw para lançar uma exceção quando prevista no códi
         return a/b;
      }
     }
+```
 
 Neste caso, o método tem uma exceção lançada caso seja dado o input de um divisor = 0
