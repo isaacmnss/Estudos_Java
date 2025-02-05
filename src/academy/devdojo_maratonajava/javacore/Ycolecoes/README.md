@@ -24,4 +24,8 @@ public class equalsTest01 {
 
 Isso ocorre pois s1 e s2 são variáveis de referência, que fazem referência a objetos *distintos* em memória, como ilustrado abaixo:
 
-![ilustraçãoequals1.png](Images/ilustracaoequals.png)
+<div align="center"> 
+
+![ilustracaoequals.png](/././Images/ilustracaoequals.png)
+
+</div>

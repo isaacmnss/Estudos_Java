@@ -189,5 +189,77 @@ int idade = 20;
 
 ### Condicional else
 
+O else serve para executar um bloco de código caso a condição dentro do if não seja satisfeita. 
+Podem também ser utilizados mais de um else, para verificar várias condições, como no exemplo a seguir:
+
+```java
+public class A05_EstruturasCondicionais02 {
+    public static void main(String[] args) {
+        int age = 21;
+        if (age < 15){
+            System.out.println("Categoria Infantil");
+        } else if (age >= 15 && age < 18) {
+            System.out.println("Categoria Juvenil");
+        }else {
+            System.out.println("Categoria adulto");
+        }
+    }
+}
+```
+
+### Operadores ternários
+
+Um operador ternário verifica uma condição e gera duas 'respostas' para caso a condição retorne true ou false.
+
+```java
+
+    public static void main(String[] args) {
+        double salario = 3300;
+        String frase1 = "Mais de 5000";
+        String frase2 = "Menos de 5000";
+        String resultado = salario > 5000 ? frase1 : frase2;
+        System.out.println(resultado);
+    }
+```
+
+No código acima, é verificado se a variavel salario é mais de 5000 e caso essa condição retorne true, é atribuído o valor
+da frase 1 à String resultado, caso retorne false, é atribuído o valor da frase 2.
+
+### Switch case
+
+O switch case verifica diversos casos, caso o valor da variável seja igual á um dos casos, é executado o bloco de código.
+Dentro do bloco, usamos o `break;` para interromper a execução do switch.
+
+Podemos também atribuir o mesmo bloco de código para mais de um case
+
+```java
+public static void main(String[] args) {
+    int dia =  2;
+    switch (dia){
+        default:
+            System.out.println("Opção inválida");
+            break;
+        case 1:
+        case 7:
+            System.out.println("Fim de semana");
+            break;
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+            System.out.println("Dia útil");
+            break;
+    }
+}
+
+```
+
+Usamos o case default como uma opção padrão que será executada caso a variável não seja compatível com nenhum dos casos do switch
+
+
+
+
+
 
 

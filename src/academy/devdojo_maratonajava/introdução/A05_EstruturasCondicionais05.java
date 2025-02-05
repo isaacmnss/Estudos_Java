@@ -7,7 +7,7 @@ public class A05_EstruturasCondicionais05 {
             default:
                 System.out.println("Opção Inválida");
             case 1:
-                System.out.println("FDS");
+                System.out.println("Fim de semana");
                 break;
             case 2:
                 System.out.println("Segunda, dia útil");
@@ -19,13 +19,13 @@ public class A05_EstruturasCondicionais05 {
                 System.out.println("Quarta, dia útil");
                 break;
             case 5:
-                System.out.println("Quinta, igual calcinha");
+                System.out.println("Quinta, dia útil");
                 break;
             case 6:
-                System.out.println("Sextou, porém dia útil");
+                System.out.println("Sexta, dia útil");
                 break;
             case 7:
-                System.out.println("Sábado com Gilberto, é SABADASSO");
+                System.out.println("Sábado com Gilberto Barros, é SABADASSO");
                 break;
         }
         // segunda forma
@@ -35,7 +35,7 @@ public class A05_EstruturasCondicionais05 {
                 break;
             case 1:
             case 7:
-                System.out.println("FDS");
+                System.out.println("Fim de semana");
                 break;
             case 2:
             case 3:
