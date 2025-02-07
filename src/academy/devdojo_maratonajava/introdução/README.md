@@ -168,7 +168,7 @@ O operador de atribuição em java é o =
 > [!NOTE]  
 > Usando apenas um sinal de = é feita a atribuição de um valor à variável e com dois sinais (==) é feita a comparação entre valores.
 
-## Estruturas condicionais
+## Estruturas condicionais (Aula 5)
 
 ---
 
@@ -256,6 +256,12 @@ public static void main(String[] args) {
 ```
 
 Usamos o case default como uma opção padrão que será executada caso a variável não seja compatível com nenhum dos casos do switch
+
+## Estruturas de repetição
+
+--- 
+
+
 
 
 

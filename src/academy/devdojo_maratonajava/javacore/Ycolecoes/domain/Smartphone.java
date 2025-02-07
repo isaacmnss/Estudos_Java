@@ -1,5 +1,7 @@
 package academy.devdojo_maratonajava.javacore.Ycolecoes.domain;
 
+import java.util.Objects;
+
 public class Smartphone {
     private String serialNumber;
     private String marca;
@@ -26,7 +28,20 @@ public class Smartphone {
         this.marca = marca;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (this.getClass() != obj.getClass()) return false;
+        Smartphone smartphone = (Smartphone) obj;
+        return serialNumber != null && serialNumber.equals(smartphone.serialNumber);
 
+    }
+
+    @Override
+    public int hashCode() {
+        return serialNumber == null ? 0 : Objects.hashCode(serialNumber);
+    }
 }
 
 
