@@ -129,3 +129,51 @@ Utilizando o exemplo do objeto anterior, podemos implementar o hashCode da segui
 
 Nesse código verificamos também se o serialNumber é null, para não gerar uma nullPointerException,
 mas estamos usando o método padrão de hashcode para Strings do próprio Java
+
+## List
+
+---
+
+Uma List é uma coleção ordenada, ou seja, possui uma sequência. O pacote List é altamente coeso e orientado a interfaces
+
+
+Podemos inicializar uma lista e indicar qual o tipo de objeto a ser armazenado dentro da lista com a seguinte síntaxe:
+
+```java
+    public static void main(String[] args) {
+        List<String> lista = new ArrayList<>();
+    } 
+```
+
+Diferentemente de um array comum, uma lista é incrementado automaticamente, sem a necessidade reinicializá-la.
+
+Alguns métodos em uma lista também possuem nomes diferentes, por exemplo, ao invés de usar `length` para retornar o tamanho do array, usamos o `size`
+
+Para iterar sob uma lista, podemos usar as seguintes formas:
+
+```java
+public static void main(String[] args) {
+        List<String> nomes = new ArrayList<>();
+        nomes.add("Isaac");
+        nomes.add("Meneses");
+        nomes.add("Cabral");
+
+        for(Object nome : nomes){
+            System.out.println(nome);
+        }
+
+        System.out.println("------------");
+
+        for (int i = 0; i < nomes.size(); i++) {
+            System.out.println(nomes.get(i));
+        }
+
+    }
+```
+
+Para remover um objeto da lista podemos usar o método `lista.remove()`, usando como parâmetro o índice do objeto a ser removido, 
+ou o próprio conteúdo. No caso de excluir usando o conteúdo do objeto, é executado o método equals para identificar índices com o valor passado
+
+
+
+Podemos também adicionar os valores de um array em outro array, usando o método `lista.addAll(lista2)`, passando como parâmetro uma outra coleção
