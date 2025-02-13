@@ -14,7 +14,13 @@ O objetivo do Java é fazer com que o mesmo código funcione em diversos sistema
 
 Buscando resolver este problema, o java utiliza uma máquina virtual, chamada JVM (Java virtual Machine). O código feito em java é passa por um processo de compilação e é transformando em um arquivo .class (bytecode), que é executado em uma máquina virtual, que é por sua vez executada pelo sistema operacional.
 
+<div align="center">
+
 ![Funcionamento do Java.png](Images/funcionamento_java.png)
+
+</div>
+
+
 
 ## Estrutura da Documentação
 
