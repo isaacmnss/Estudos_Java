@@ -48,16 +48,16 @@ Comentário de múltiplas linhas, usando /*:
 
 No java, existem 8 tipos primitivos, são eles:
 
-| nome do tipo | O que representa                          |
-|--------------|-------------------------------------------|
-| int          | Números inteiros                          |
-| double       | valores com casas decimais mais precisas  |
-| float        | valores com casas decimais menos precisas |
-| long         | valores grandes, com muitas casas         |
-| boolean      | armazenamento de verdadeiro ou falso      |
-| short        | valores menores                           |
-| byte         | armazena valores de 1 byte                |
-| char         | armazena apenas um caractere              |
+| nome do tipo |             O que representa              |
+|:------------:|:-----------------------------------------:|
+|     int      |             Números inteiros              |
+|    double    | valores com casas decimais mais precisas  |
+|    float     | valores com casas decimais menos precisas |
+|     long     |     valores grandes, com muitas casas     |
+|   boolean    |   armazenamento de verdadeiro ou falso    |
+|    short     |              valores menores              |
+|     byte     |        armazena valores de 1 byte         |
+|     char     |       armazena apenas um caractere        |
 
 
 Para inicializar uma variável em java, devemos primeiramente declarar o tipo da variável, o nome dela, e atribuir um valor
@@ -92,13 +92,13 @@ Dentro do java temos diversos tipos de operadores, aritméticos, lógicos, de at
 
 * ### Operadores aritiméticos
 
-| operador | função               |
-|----------|----------------------|
-| +        | adição               |
-| -        | subtração            |
-| *        | multiplicação        |
-| /        | divisão              |
-| %        | resto de uma divisão |
+| operador |        função        |
+|:--------:|:--------------------:|
+|    +     |        adição        |
+|    -     |      subtração       |
+|    *     |    multiplicação     |
+|    /     |       divisão        |
+|    %     | resto de uma divisão |
 
 > [!NOTE]  
 > O operador de adição no java é sobrecarregado, e pode ser usado tanto para adição quanto para concatenação, por isso, em alguns casos pode ser ideal usar uma terceira variável para armazenar o resultado de uma operação
@@ -113,14 +113,14 @@ public static void main(String[] args) {
 ```
 * ### Operadores relacionais
 
-| operador | função         |
-|----------|----------------|
-| <        | menor que      |
-| \>       | maior que      |
-| \>=      | maior ou igual |
-| <=       | menor ou igual |
-| !=       | diferente de   |
-| ==       | igual a        |
+| operador |     função     |
+|:--------:|:--------------:|
+|    <     |   menor que    |
+|    \>    |   maior que    |
+|   \>=    | maior ou igual |
+|    <=    | menor ou igual |
+|    !=    |  diferente de  |
+|    ==    |    igual a     |
 
 > Os operadores relacionais sempre retornam valores booleanos (_true_ ou _false_)
 
@@ -261,11 +261,239 @@ Usamos o case default como uma opção padrão que será executada caso a variá
 
 --- 
 
+Uma estrutura de repetição executa um bloco de código até que uma condição seja satisfeita, e o java possui algumas dessas, que viremos nesta seção:
 
 
+### While
+
+O while executa um bloco de código _enquanto_ uma condição é _true_, sendo interrompida quando a condição se torna _false_, como no exemplo a seguir:
+
+```java
+
+public static void main(String[] args) {
+    int i = 0;
+    while (i < 10){
+        System.out.println(i++);
+    }
+}
+
+```
+
+Há também o loop `do-while`, que se diferencia pois executa o bloco de código ainda que a condição seja false
+
+```java
+
+public static void main(String[] args) {
+    int i = 12;
+    do {
+        System.out.println(i);
+    }while (i < 10);
+}
+
+```
+
+### For
+
+O for funciona de maneira semelhante, porém incorpora 3 expressões dentro dos parâmetros, que definem respectivamente 
+a variável utilizada, a condição do loop, e o incremento ou decremento da variável auxiliar
 
 
+```java
+
+public static void main(String[] args) {
+    for (int i = 0; i < 10; i++) {
+        System.out.println(i);
+    }
+}
+
+```
+
+Podemos interromper a execução de um laço de repetição ainda que a condição seja true, utilizando o `break`
+
+```java
+
+public static void main(String[] args) {
+    for (int i = 0; i < 10; i++) {
+        if (i >8){
+            break;
+        }
+        System.out.println(i);
+    }
+}
+
+```
 
 
+## Arrays
+
+---
+
+Um array é uma forma de armazenar diversos valores em uma mesma variável de referência, como em uma lista,
+onde cada valor está armazenado em um índice
+
+
+<div align="center"> 
+
+![img.png](../../../../Images/ilustracao_array.png)
+
+</div>
+
+O primeiro índice de um array é sempre zero.
+
+Para inicializar um array no java, usamos os seguintes comandos:
+
+```java
+
+public static void main(String[] args) {
+    int[] numeros = new int[3];
+}
+
+```
+
+Devemos passar dentro dos colchetes o número máximo de índices do array, no array acima, temos três posições declaradas, 
+mas como o 0 é o primeiro, o índice máximo é o dois
+
+Arrays possuem valores padrão para os índices não inicializados 
+
+
+|  tipo   | Valor padrão  |
+|:-------:|:-------------:|
+|   int   |       0       |
+| double  |       0       |
+|  float  |       0       |
+|  long   |       0       |
+|  short  |       0       |
+|  byte   |       0       |
+| boolean |     false     |
+|  char   | \\u0000 (' ') |
+| String  |     null      |
+
+
+Podemos atribuir e imprimir valores de índices específicos
+
+
+```java
+
+public static void main(String[] args) {
+    int[] numeros = new int[3];
+    
+    numeros[0] = 1;
+    numeros[1] = 4;
+    numeros[2] = 3;
+
+    System.out.println(numeros[2]);
+}
+```
+
+Uma boa forma de imprimir todos os valores de um array, é usar um loop for limitado pelo tamanho array
+
+```java
+
+public static void main(String[] args) {
+    int[] numeros = new int[3];
+    
+    numeros[0] = 1;
+    numeros[1] = 4;
+    numeros[2] = 3;
+
+    for (int i = 0; i < numeros.length; i++) {
+        System.out.println(numeros[i]);
+    }
+}
+
+```
+
+É possível também inicializar um array diretamente com os valores
+
+```java
+public static void main(String[] args) {
+    int[] numeros = {1,4,3};
+
+    for (int i = 0; i < numeros.length; i++) {
+        System.out.println(numeros[i]);
+    }
+}
+```
+
+Podemos também percorrer um array usando um enhanced for
+
+```java
+public static void main(String[] args) {
+    int[] numeros = {1,4,3};
+
+    for (int numero : numeros) {
+        System.out.println(numero);
+    }
+}
+```
+Neste caso, é gerada uma variável de referência que itera sob todas as posições do array
+
+
+É importante salientar que não é possível aumentar o tamanho de uma array durante a execução do código,
+e se tentarmos fazer isso em tempo de execução, na verdade, a variável de referência será atribuída a um novo espaço em memória 
+e o array antigo se tornará inacessível
+
+### Arrays Multidimensionais
+
+Um array multidimensional é um array que tem outros arrays em seus índices. Por exemplo, um array com uma dimensão é como uma linha 
+com um índice para cada valor, já um array de duas dimensões teria linhas e colunas.
+
+A ilustração abaixo pode facilitar o entendimento:
+
+<div align="center"> 
+
+![img.png](../../../../Images/ilustracao_arrays_multidimensionais.png)
+
+</div>
+
+Para percorrer por todas as posições de um array multidimensionais, usamos os mesmo métodos anteriores, mas utilizando 
+mais de um loop
+
+
+Usando for regular:
+```java
+    public static void main(String[] args) {
+        
+        int [] [] dias = new int [3] [3];
+        dias [0] [0] = 31;
+        dias [0] [1] = 28;
+        dias [0] [2] = 31;
+
+        dias [1] [0] = 31;
+        dias [1] [1] = 28;
+        dias [1] [2]= 31;
+
+        for (int i = 0; i < dias.length; i++) {
+            for (int j=0; j<dias[0].length; j++){
+                System.out.println(dias[i][j]);
+            }
+        }
+    }
+```
+
+Usando enhanced for
+```java
+    public static void main(String[] args) {
+        
+        int [] [] dias = new int [3] [3];
+        dias [0] [0] = 31;
+        dias [0] [1] = 28;
+        dias [0] [2] = 31;
+
+        dias [1] [0] = 31;
+        dias [1] [1] = 28;
+        dias [1] [2]= 31;
+
+        for(int[] arrBase: dias){
+            for(int num: arrBase){
+                System.out.println(num);
+            }
+        }
+    }
+
+```
+
+No caso do enhanced for, como precisamos que a variável seja do mesmo tipo que a armazenada no array, 
+e um array multidimensional armazena arrays, utilizamos um array de inteiros para percorrer os índices do primeiro array
 
 

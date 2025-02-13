@@ -177,3 +177,28 @@ ou o próprio conteúdo. No caso de excluir usando o conteúdo do objeto, é exe
 
 
 Podemos também adicionar os valores de um array em outro array, usando o método `lista.addAll(lista2)`, passando como parâmetro uma outra coleção
+
+
+### Sorting 
+
+Uma das formas de sortir uma lista é usando o método `Collections.sort`, que retorna a lista ordenada, 
+no caso de uma lista de Strings, em ordem alfabética e em caso de números, em ordem numérica.
+
+```java
+import java.util.Collections;
+
+public static void main(String[] args) {
+    List<String> mangas = new ArrayList<>(6);
+    mangas.add("One Piece");
+    mangas.add("Berserk");
+    mangas.add("Fullmetal Alchemist");
+    mangas.add("Naruto");
+    mangas.add("Bleach");
+
+    Collections.sort(mangas);
+
+    for (String manga : mangas) {
+        System.out.println(manga);
+    }
+}
+```
