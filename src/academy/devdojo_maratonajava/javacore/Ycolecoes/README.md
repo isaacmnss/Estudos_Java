@@ -202,3 +202,30 @@ public static void main(String[] args) {
     }
 }
 ```
+
+No entanto, há um problema, pois em uma lista de objetos, não fica claro para o Java por onde ele deve começar a ordenação, 
+e a tentativa de usar o método `Collections.sort` lança uma Exception. 
+
+Para resolver isso, podemos criar o nosso próprio ordenamento, implementando a interface `Comparable`, 
+e o seu método `compareTo`
+
+```java
+public class Manga implements Comparable<Manga> {
+    private Long id;
+    private String nome;
+    private double preco;
+
+    @Override
+    public int compareTo(Manga outroManga) {
+        if(this.id < outroManga.getId()){
+            return -1;
+        } else if (this.id.equals(outroManga.getId())){
+            return 0;
+        }else {
+            return 1;
+        }
+    }
+} 
+```
+
+Dessa forma, o Java consegue organizar numericamente a ordem dos ids, e podemos utilizar o método `Collections.sort()`

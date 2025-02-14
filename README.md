@@ -34,4 +34,8 @@ Todos os links para os capítulos são clicáveis e direcionam você diretamente
 
 ---
 
-* ### [Introdução](src/academy/devdojo_maratonajava/introdução/) 
+* ### Capítulo 1 - Introdução
+    * [Tipos primitivos, operadoras, estruturas condicionais, de repetição, e Arrays.](src/academy/devdojo_maratonajava/introdução/) 
+
+* ### Capítulo 2 - Orientação à objetos
+    * [Classes](src/academy/devdojo_maratonajava/javacore/Aintroducaoclasses)
