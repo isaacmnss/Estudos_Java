@@ -18,7 +18,7 @@ public class Manga implements Comparable<Manga>{
         this.preco = preco;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

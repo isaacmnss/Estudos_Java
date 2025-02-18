@@ -1,4 +1,4 @@
-# Repositório de Estudos em Java
+**# Repositório de Estudos em Java
 
 ---
 
@@ -39,3 +39,4 @@ Todos os links para os capítulos são clicáveis e direcionam você diretamente
 
 * ### Capítulo 2 - Orientação à objetos
     * [Classes](src/academy/devdojo_maratonajava/javacore/Aintroducaoclasses)
+    * [Métodos](src/academy/devdojo_maratonajava/javacore/Bintroducaometodos)

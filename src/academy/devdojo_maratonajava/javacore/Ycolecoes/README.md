@@ -176,7 +176,8 @@ ou o próprio conteúdo. No caso de excluir usando o conteúdo do objeto, é exe
 
 
 
-Podemos também adicionar os valores de um array em outro array, usando o método `lista.addAll(lista2)`, passando como parâmetro uma outra coleção
+Podemos também adicionar os valores de um array em outro array, usando o método `lista.addAll(lista2)`, passando como 
+parâmetro uma outra coleção
 
 
 ### Sorting 
@@ -229,3 +230,104 @@ public class Manga implements Comparable<Manga> {
 ```
 
 Dessa forma, o Java consegue organizar numericamente a ordem dos ids, e podemos utilizar o método `Collections.sort()`
+
+Outra forma de fazer isso é usando o método compareTo que já foi implementado no Wrapper da classe `Long`. Assim, 
+podemos substituir todo o código acima por apenas uma linha:
+
+```java
+public class Manga implements Comparable<Manga> {
+    private Long id;
+    private String nome;
+    private double preco;
+
+    @Override
+    public int compareTo(Manga outroManga) {
+        return this.id.compareTo(outroManga.getId());
+    }
+} 
+```
+
+Só podemos fazer essa implementação caso não estejamos lidando com tipos primitivos. No entanto, ainda podemos fazer o 
+casting de um tipo primitivo para um Wrapper, e assim implementar o método `.compare`
+
+```java
+public class Manga implements Comparable<Manga> {
+    private Long id;
+    private String nome;
+    private double preco;
+
+    @Override
+    public int compareTo(Manga outroManga) {
+        return Double.compare(preco, outroManga.getPreco());
+    }
+} 
+```
+
+
+Outra interface utilizada para sortir a lista é a `Comparator`. Para implementar a Comparator devemos criar uma nova classe
+que implementa a interface comparator e implementar o método compare dentro desta classe. 
+
+```java
+class MangaByIdComparator implements Comparator<Manga>{
+    @Override
+    public int compare(Manga manga1, Manga manga2) {
+        return manga1.getId().compareTo(manga2.getId());
+    }
+}
+
+public class MangaSortTest01 {
+    public static void main(String[] args) {
+        List<Manga> mangas = new ArrayList<>(6);
+        mangas.add(new Manga( 4L,"One Piece", 32.5));
+        mangas.add(new Manga( 2L,"Berserk", 32.5));
+        mangas.add(new Manga( 1L,"Fullmetal Alchemist", 32.5));
+        mangas.add(new Manga( 5L,"Naruto", 32.5));
+        mangas.add(new Manga( 3L,"Bleach", 32.5));
+
+
+        mangas.sort(new MangaByIdComparator());
+
+        for (Manga manga : mangas){
+            System.out.println(manga);
+        }
+
+    }
+}
+```
+
+Essa abordagem permite que a lista seja sortida de formas diferentes sem fazer alterações no código ou até mesmo
+quebrar o código.
+
+#### Binary Search
+
+---
+
+Outro método de fazer busca em uma coleção ou Array é o Binary Search, com a diferença que o binary search retorna também
+a posição em que um elemento deve ser inserido caso ele não exista, mas para que isso ocorra, a lista deve ser ordenada.
+
+Os parâmetros do método `Collections.binarySearch` são a lista, o valor que se deseja encontrar, e caso necessário, o comparator utilizado.
+
+Caso o valor não seja encontrado, o método retorna o índice em que ele deveria ser inserido conforme o sorting da lista - 1
+
+Por exemplo, no caso de um valor que não exista, mas pode ser adicionado no índice 0, o método retorna -1.
+
+Se essa regra não existisse, se fizéssemos a chamada do método para o valor no índice zero e também para um valor que
+pode ser adicionado no índice 0, o método retornaria 0 em ambos os casos, o que não ocorre.
+
+```java
+public static void main(String[] args) {
+        List<Integer> numeros = new ArrayList<>();
+        numeros.add(2);
+        numeros.add(0);
+        numeros.add(4);
+        numeros.add(3);
+        // (-(ponto de inserção)-1)
+        Collections.sort(numeros);
+        System.out.println(Collections.binarySearch(numeros, 0));
+        System.out.println(Collections.binarySearch(numeros, -1));
+
+    }
+```
+
+
+

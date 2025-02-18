@@ -76,7 +76,7 @@ public static void main(String[] args) {
     }
 ```
 
-### Coesão
+> [!TIP]
+> É importante e uma boa prática manter a coesão do código, garantindo que cada classe tenha apenas um propósito.
 
-É importante e uma boa prática manter a coesão do código, garantindo que cada classe tenha apenas um propósito.
 
