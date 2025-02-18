@@ -378,8 +378,55 @@ Para contornar isso, podemos criar um ArrayList e passar no parâmetro deste, a 
 List<Integer> numerosList =  new ArrayList<>(Arrays.asList(numerosArray));
 ```
 
+### Remoção de objetos
+
+---
+
+Em alguns casos, podemos querer remover um elemento de uma lista. Para isso, podemos usar a iteração foreach, mas isso 
+geraria uma exceção
+
+```java
+public static void main(String[] args) {
+        List<Manga> mangas = new ArrayList<>(6);
+        mangas.add(new Manga( 4L,"One Piece", 32.5, 0));
+        mangas.add(new Manga( 2L,"Berserk", 32.5, 5));
+        mangas.add(new Manga( 1L,"Fullmetal Alchemist", 32.5, 0));
+        mangas.add(new Manga( 5L,"Naruto", 32.5, 2));
+        mangas.add(new Manga( 3L,"Bleach", 32.5, 0));
+
+        for (Manga manga : mangas){
+            if (manga.getQuantidade()==0){
+                mangas.remove(manga);
+            }
+        }
+    }
+```
+
+Uma boa forma de fazer a remoção, seria utilizando um Iterator. Um iterator é uma classe que faz validações antes que 
+seja feita alguma ação.
+
+```java
+public static void main(String[] args) {
+    Iterator<Manga> mangaIterator = mangas.iterator();
+    while (mangaIterator.hasNext()){
+        if (mangaIterator.next().getQuantidade() == 0 ){
+            mangaIterator.remove();
+        }
+    }
+}
+```
+
+No caso acima, o iterator verifica se existe um objeto seguinte para fazer a remoção
 
 
+Uma outra forma de remover objetos da lista, seria utilizando o método `Collections.removeIf`
+
+
+```java
+public static void main(String[] args) {
+    mangas.removeIf(manga -> manga.getQuantidade()==0);
+}
+```
 
 
 
