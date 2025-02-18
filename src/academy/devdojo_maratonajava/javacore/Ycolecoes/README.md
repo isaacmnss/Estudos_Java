@@ -330,4 +330,58 @@ public static void main(String[] args) {
 ```
 
 
+### Conversão
+
+---
+
+Em alguns casos podemos querer fazer a conversão de um array para uma lista e vice-versa.
+
+No caso da conversão de uma Lista para um array, podemos usar o método `.toArray`, como no código a seguir:
+
+```java
+ public static void main(String[] args) {
+    List<Integer> numeros = new ArrayList<>();
+    numeros.add(1);
+    numeros.add(2);
+    numeros.add(3);
+    Integer[] listToArray = numeros.toArray(new Integer[0]);
+    System.out.println(Arrays.toString(listToArray));
+}
+```
+
+Já no caso da conversão de um array para lista, temos algumas opções
+
+
+ Utilizando o método `Arrays.asList`:
+
+```java
+public static void main(String[] args) {
+    Integer [] numerosArray = new Integer[3];
+    numerosArray[0] = 1;
+    numerosArray[1] = 2;
+    numerosArray[2] = 3;
+
+    List<Integer> arraysToList = Arrays.asList(numerosArray);
+    System.out.println(Arrays.toString(numerosArray));
+    System.out.println(arraysToList);
+}
+```
+
+>[!WARNING]
+> O método Arrays.asList cria uma ligação entre a lista e o array original, então se for feita alguma alteração nos 
+> elementos da lista, ela se refletirá no array. Em decorrência disso não é possível adicionar um elemento na lista 
+> usando este método
+
+Para contornar isso, podemos criar um ArrayList e passar no parâmetro deste, a conversão do array para lista.
+
+```java
+List<Integer> numerosList =  new ArrayList<>(Arrays.asList(numerosArray));
+```
+
+
+
+
+
+
+
 

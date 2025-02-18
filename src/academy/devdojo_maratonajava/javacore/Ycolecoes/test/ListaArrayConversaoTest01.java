@@ -15,9 +15,15 @@ public class ListaArrayConversaoTest01 {
 
         Integer [] numerosArray = new Integer[3];
         numerosArray[0] = 1;
-        numerosArray[0] = 2;
-        numerosArray[0] = 3;
+        numerosArray[1] = 2;
+        numerosArray[2] = 3;
 
-        Arrays.asList(numerosArray);
+        List<Integer> arraysToList = Arrays.asList(numerosArray);
+        System.out.println(Arrays.toString(numerosArray));
+        System.out.println(arraysToList);
+
+        System.out.println("-----------");
+        List<Integer> numerosList =  new ArrayList<>(Arrays.asList(numerosArray));
+        System.out.println(numerosList);
     }
 }
