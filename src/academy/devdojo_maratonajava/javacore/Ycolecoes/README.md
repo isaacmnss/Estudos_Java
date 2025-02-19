@@ -2,8 +2,15 @@
 
 ---
 
-O pacote de coleções é um dos mais importantes e um dos mais utilizados no dia a dia como desenvolvedor, e nessa seção dissecaremos
-os seus usos.
+O pacote de coleções é um dos mais importantes e um dos mais utilizados no dia a dia como desenvolvedor como meios de armazenar dados,
+o Java possui diversos pacotes de coleção que serão abordados neste capítulo.
+
+
+<div align="center">
+
+![ilustracaoequals.png](/././Images/diagrama_collections.jpg)
+</div>
+
 
 ## Equals
 
@@ -428,6 +435,36 @@ public static void main(String[] args) {
 }
 ```
 
+
+### Set e HashSet
+
+O Set é uma interface da Collections que não permite elementos duplicados dentro da coleção.
+Antes de inserir um atributo no Set, o Java valida por meio do método equals se ele já existe na coleção e caso já exista, é ignorado.
+
+O Set não é indexado, então não é possível imprimir um elemento de um índice. Para isso, seria necessário iterar sob a coleção
+
+```java
+ public static void main(String[] args) {
+        Set<Manga> mangas = new HashSet<>();
+        mangas.add(new Manga( 4L,"One Piece", 32.5, 0));
+        mangas.add(new Manga( 2L,"Berserk", 32.5, 5));
+        mangas.add(new Manga( 1L,"Fullmetal Alchemist", 32.5, 0));
+        mangas.add(new Manga( 5L,"Naruto", 32.5, 2));
+        mangas.add(new Manga( 3L,"Bleach", 32.5, 0));
+
+
+        for (Manga manga: mangas){
+            System.out.println(manga);
+        }
+    }
+```
+
+O HashSet não mantém a ordem de inserção dos elementos, e caso desejemos preservar esta ordem podemos usar um LinkedHashSet
+
+```java
+
+Set<Manga> mangas = new LinkedHashSet<>();
+```
 
 
 
