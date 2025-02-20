@@ -5,13 +5,13 @@ import java.util.Objects;
 public class Manga implements Comparable<Manga>{
     private Long id;
     private String nome;
-    private double preco;
+    private Double preco;
     private int quantidade;
 
     public Manga() {
     }
 
-    public Manga(long id, String nome, double preco) {
+    public Manga(long id, String nome, Double preco) {
         Objects.requireNonNull(id, "Id não pode ser nulo");
         Objects.requireNonNull(nome,"Nome não pode ser nulo");
         this.id = id;
@@ -19,7 +19,7 @@ public class Manga implements Comparable<Manga>{
         this.preco = preco;
     }
 
-    public Manga(Long id, String nome, double preco, int quantidade) {
+    public Manga(Long id, String nome, Double preco, int quantidade) {
         this(id, nome, preco);
         this.quantidade = quantidade;
     }
@@ -40,11 +40,11 @@ public class Manga implements Comparable<Manga>{
         this.nome = nome;
     }
 
-    public double getPreco() {
+    public Double getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
 

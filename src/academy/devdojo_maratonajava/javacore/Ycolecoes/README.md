@@ -462,10 +462,61 @@ O Set não é indexado, então não é possível imprimir um elemento de um índ
 O HashSet não mantém a ordem de inserção dos elementos, e caso desejemos preservar esta ordem podemos usar um LinkedHashSet
 
 ```java
-
 Set<Manga> mangas = new LinkedHashSet<>();
 ```
 
+### NavigableSet e TreeSet
+
+O NavigableSet é uma interface, e o TreeSet é uma das classes que implementa essa interface.
+
+O TreeSet possui algumas regras, como, por exemplo, para adicionar um objeto em um, este objeto deve ser comparable, 
+e também o TreeSet não utiliza o equals para comparar elementos, mas sim o compareTo
+
+Caso o objeto não seja comparable, podemos criar um comparator e passar este dentro do parâmetro do TreeSet
+
+```java
+class SmartphoneMarcaComparator implements Comparator<Smartphone> {
+    @Override
+    public int compare(Smartphone o1, Smartphone o2) {
+        return o1.getMarca().compareTo(o2.getMarca());
+    }
+}
+
+public class NavigableSetTest {
+    public static void main(String[] args) {
+        NavigableSet<Smartphone> set = new TreeSet<>(new SmartphoneMarcaComparator());
+        Smartphone smartphone = new Smartphone("123", "Apple");
+        set.add(smartphone);
+        System.out.println(set);
+    }
+}
+```
+
+Outra regra do `TreeSet` é que ele sempre faz a organização da coleção automaticamente, baseado no `compareTo`, 
+mesmo que tenha sido inserido um novo elemento da coleção
+
+Por se tratar de um `Set`, o `TreeSet` também não aceita duplicatas, mas por não utilizar o equals para comparar elementos,
+se o atributo usado no compareTo for diferente entre 2 objetos, mas todos os outros atributos são iguais, então o elemento pode ser adicionado à coleção.
 
 
+Por conta destes comportamentos, é ideal utilizar o TreeSet quando a classe implementa um `Comparable` ou `Comparator`
 
+Para retornar a lista inversa, podemos iterar sob a coleção usando o método `descendingSet`
+
+
+Há ainda 4 outros métodos interessantes do TreeSet, são eles: `lower`, `floor`, `higher`  e `ceiling`
+
+
+Esses são métodos de comparação
+
+`lower` retorna um objeto com valor imediatamente menor em relação ao parâmetro passado.
+
+`floor` retorna todos os objetos com valor menor ou igual ao parâmetro passado.
+
+`higher` retorna um objeto com valor imediatamente maior em relação ao parâmetro passado.
+
+`ceiling` retorna todos os objetos com valor maior ou igual ao parâmetro passado.
+
+
+Há também o método `pollFirst`, que retorna e remove o primeiro elemento da lista, e o `pollLast` faz o mesmo, 
+mas com o último elemento da lista
