@@ -436,7 +436,7 @@ public static void main(String[] args) {
 ```
 
 
-### Set e HashSet
+## Set e HashSet
 
 O Set é uma interface da Collections que não permite elementos duplicados dentro da coleção.
 Antes de inserir um atributo no Set, o Java valida por meio do método equals se ele já existe na coleção e caso já exista, é ignorado.
@@ -465,7 +465,7 @@ O HashSet não mantém a ordem de inserção dos elementos, e caso desejemos pre
 Set<Manga> mangas = new LinkedHashSet<>();
 ```
 
-### NavigableSet e TreeSet
+## NavigableSet e TreeSet
 
 O NavigableSet é uma interface, e o TreeSet é uma das classes que implementa essa interface.
 
@@ -520,3 +520,121 @@ Esses são métodos de comparação
 
 Há também o método `pollFirst`, que retorna e remove o primeiro elemento da lista, e o `pollLast` faz o mesmo, 
 mas com o último elemento da lista
+
+## Map, HashMap, e LinkedHashMap
+
+---
+
+
+O Map tecnicamente não é uma Collection, pois não está na linha de herança da interface Collection
+
+O Map utiliza chaves para mapear valores.
+
+Para inicializar o HashMap devemos declarar qual o tipo da variável da chave e o tipo da variável do valor que a chave armazena.
+
+```java
+Map<String, String> map = new HashMap<>();
+```
+
+Para adicionar elementos em um Map, ao invés do `add`, usamos o método `put`
+
+```java
+public static void main(String[] args) {
+        Map<String, String> map = new HashMap<>();
+        map.put("tc", "teclado");
+        map.put("ts", "this");
+        map.put("vc", "você");
+    }
+```
+
+O map não pode ter chaves duplicadas, e caso seja feita a adição de valores diferentes com a mesma chave,
+o valor inicial será sobrescrito
+
+Para evitar isso, podemos usar o método `putIfAbsent()`, que adiciona o elemento apenas caso ele não exista na coleção
+
+Para iterar e imprimir os elementos, podemos iterar sob as chaves ou valores, pois podem apresentar resultados diferentes,
+visto que não são aceitas chaves duplicadas, mas são aceitos valores duplicados em chaves diferentes.
+
+```java
+public static void main(String[] args) {
+    Map<String, String> map = new HashMap<>();
+    map.put("tc", "teclado");
+    map.put("ts", "this");
+    map.put("vc", "você");
+    
+    for (String key : map.keySet()){
+        System.out.println(key + " -> " + map.get(key));
+    }
+}
+```
+
+Outra forma de fazer esta iteração é utilizando o entrySet, o Entry é um objeto que possui a chave e o valor
+
+```java
+public static void main(String[] args) {
+    Map<String, String> map = new HashMap<>();
+    map.put("tc", "teclado");
+    map.put("ts", "this");
+    map.put("vc", "você");
+
+    for (Map.Entry<String, String> entry : map.entrySet()){
+        System.out.println(entry.getKey() + " -> " + entry.getValue());
+    }
+}
+```
+
+Uma forma comum de utilizar o Map, é passando objetos como chave e valor, para associá-los, como no exemplo a seguir
+
+```java
+public static void main(String[] args) {
+        Consumidor consumidor1 = new Consumidor("William Suane");
+        Consumidor consumidor2 = new Consumidor("Devdojo Academy");
+
+        Manga manga1 = new Manga( 4L,"One Piece", 15.99);
+        Manga manga2 = new Manga( 2L,"Berserk", 21.50);
+
+        Map<Consumidor, Manga> consumidorMangaMap = new HashMap<>();
+        consumidorMangaMap.put(consumidor1, manga1);
+        consumidorMangaMap.put(consumidor2, manga2);
+
+        for (Map.Entry<Consumidor, Manga> entry : consumidorMangaMap.entrySet()){
+            System.out.println(entry.getKey().getNome() + " -> " + entry.getValue().getNome());
+        }
+    }
+```
+
+No entanto, precisamos fazer uma alteração caso um consumidor possa ter comprar mais de um Mangá. Neste caso, ao invés de passar Mangá
+como parâmetro, devemos passar uma Lista de Mangá. Criando uma espécie de Array multidimensional.
+
+Como estamos usando uma Lista, para imprimir os valores devemos usar um forEach e então conseguir imprimr os valores
+
+```java
+public static void main(String[] args) {
+        Consumidor consumidor1 = new Consumidor("William Suane");
+        Consumidor consumidor2 = new Consumidor("Devdojo Academy");
+
+        Manga manga1 = new Manga( 4L,"One Piece", 15.99);
+        Manga manga2 = new Manga( 2L,"Berserk", 21.50);
+        Manga manga3 = new Manga( 1L,"Fullmetal Alchemist", 19.90);
+        Manga manga4 = new Manga( 5L,"Naruto", 22.0);
+        Manga manga5 = new Manga( 3L,"Bleach", 27.90);
+
+
+        Map<Consumidor, List<Manga>> consumidorMangaMap = new HashMap<>();
+
+        List<Manga> mangaConsumidor1List = List.of(manga1,manga2,manga3);
+        List<Manga> mangaConsumidor2List = List.of(manga1,manga4,manga5);
+
+        consumidorMangaMap.put(consumidor1, mangaConsumidor1List);
+        consumidorMangaMap.put(consumidor2, mangaConsumidor2List);
+
+
+
+        for (Map.Entry<Consumidor, List<Manga>> entry : consumidorMangaMap.entrySet()){
+            System.out.println(entry.getKey().getNome());
+            for (Manga manga : entry.getValue()){
+                System.out.println(manga);
+            }
+        }
+    }
+```
