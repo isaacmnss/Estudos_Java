@@ -627,8 +627,7 @@ public static void main(String[] args) {
 
         consumidorMangaMap.put(consumidor1, mangaConsumidor1List);
         consumidorMangaMap.put(consumidor2, mangaConsumidor2List);
-
-
+        
 
         for (Map.Entry<Consumidor, List<Manga>> entry : consumidorMangaMap.entrySet()){
             System.out.println(entry.getKey().getNome());
@@ -638,3 +637,42 @@ public static void main(String[] args) {
         }
     }
 ```
+
+### NavigableMap
+
+Assim como no Map, para criar um NavigableMap devemos adicionar chave e valor. No caso do NavigableMap, similarmente ao 
+NavigableSet, o NavigableMap deve implementar Comparable na chave ou usar um comparator
+
+Também como em um NavigableSet, a coleção se ordena automaticamente com base no valor / comparator da chave
+
+```java
+public class NavigableMapTest01 {
+    public static void main(String[] args) {
+        NavigableMap<String, String> map = new TreeMap<>();
+        map.put("A", "Letra A");
+        map.put("D", "Letra D");
+        map.put("B", "Letra B");
+        map.put("C", "Letra C");
+        map.put("E", "Letra E");
+
+        for (Map.Entry<String,String> entry : map.entrySet()){
+            System.out.println(entry.getKey() + "->" + entry.getValue());
+        }
+    }
+}
+```
+
+
+Um método interessante do NavigableMap é o `headMap`, que retorna todos elementos que vêm abaixo da chave passada como parâmetro. 
+Podemos também usar um bool true como parâmetro para incluir a própria chave na lista de elementos retornados.
+
+```java
+public static void main(String[] args) {
+    System.out.println(map.headMap("C",true));
+}
+```
+
+O NavigableSet também implementa os métodos `ceiling`, `floor`, `higher` e `lower`, mas como `ceilingKey`, `floorKey`, `
+higherKey` e `lowerKey`
+
+
