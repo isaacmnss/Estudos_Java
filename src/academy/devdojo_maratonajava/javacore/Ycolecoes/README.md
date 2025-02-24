@@ -675,4 +675,34 @@ public static void main(String[] args) {
 O NavigableSet também implementa os métodos `ceiling`, `floor`, `higher` e `lower`, mas como `ceilingKey`, `floorKey`, `
 higherKey` e `lowerKey`
 
+## Queue e PriorityQueue
 
+A Queue tem por padrão a característica FIFO (First in, first out), ou seja, o primeiro a entrar, é o primeiro a sair, 
+similarmente a uma fila na realidade.
+
+Assim como SortedSets, as classes inseridas em uma Queue devem ser comparable ou implementar um comparator.
+
+A priorityQueue foi criada para trabalhar com prioridades customizadas
+
+```java
+public static void main(String[] args) {
+        Queue<String> queue = new PriorityQueue<>();
+        queue.add("D");
+        queue.add("B");
+        queue.add("A");
+        queue.add("C");
+        for (String string : queue) {
+            System.out.println(string);
+        }
+    }
+```
+
+É recomendável usar os métodos próprios da PriorityQueue, como `peek`, `poll`, `offer` e `remove`.
+
+
+O `peek` mostra o elemento sem removê-lo da coleção.
+
+`poll` mostra o elemento e o remove da lista
+
+o `offer` é um método similar ao `add`, mas o `add` retorna uma exceção caso o limite pré-definido da queue seja excedido, 
+enquanto o `offer` retorna um boolean
